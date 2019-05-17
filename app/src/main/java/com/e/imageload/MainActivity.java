@@ -21,12 +21,12 @@ public class MainActivity extends AppCompatActivity {
 
         setContentView(R.layout.activity_main);
 
-        new DownloadImageFromInternet((ImageView) findViewById(R.id.image_view))
+        new DownloadImage((ImageView) findViewById(R.id.image_view))
                 .execute("https://www.androidguys.com/wp-content/uploads/2016/10/957061_14456206485809_rId8.jpg");
-    } private class DownloadImageFromInternet extends AsyncTask<String, Void, Bitmap> {
+    } private class DownloadImage extends AsyncTask<String, Void, Bitmap> {
         ImageView imageView;
 
-        public DownloadImageFromInternet(ImageView imageView) {
+        public DownloadImage(ImageView imageView) {
             this.imageView = imageView;
             Toast.makeText(getApplicationContext(), "Please wait, it may take a few minute...", Toast.LENGTH_SHORT).show();
         }
